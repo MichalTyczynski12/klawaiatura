@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.litera{
+    width: 50px;
+    height: 50px;
+    background-color: antiquewhite;
+}
+    </style>
+    
+</head>
+<body>
+   <div id="klawiatura">
+
+   </div>
+<div id="text">
+
+</div>
+        <script>
+           function run() {
+            for(var i=65; i<=90; i++){
+            var litera=String.fromCharCode(i)
+            console.log(litera)
+            let btn=document.createElement("button")
+            btn.textContent=litera
+            btn.setAttribute("class", "litera");
+            document.getElementById("klawiatura").appendChild(btn)
+            var text = document.getElementById("text");
+            btn.addEventListener("click", function (){
+                text.textContent=text.textContent+btn.textContent
+            })
+           }
+           }
+           window.onload=run
+           
+        </script>
+</body>
+</html>
